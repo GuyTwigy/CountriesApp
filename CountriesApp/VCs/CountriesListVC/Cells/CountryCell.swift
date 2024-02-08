@@ -23,7 +23,6 @@ class CountryCell: UITableViewCell {
     @IBOutlet weak var flagLbl: UILabel!
     @IBOutlet weak var countryNameLbl: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
