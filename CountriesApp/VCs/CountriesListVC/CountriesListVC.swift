@@ -24,7 +24,7 @@ class CountriesListVC: UIViewController {
         super.viewDidLoad()
         addRefreshControl(to: tblCountries, action: #selector(refreshData))
         hideKeyboardWhenTappedAround(cancelTouches: false)
-        vm = CountriesVM()
+        vm = CountriesListVM()
         vm?.delegate = self
         setupTableView()
     }
@@ -63,8 +63,8 @@ extension CountriesListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = CountryDetailsVC(country: countryList[indexPath.row])
-        navigationController?.pushViewController(vc, animated: true)
+//        let vc = CountryDetailsVC(country: countryList[indexPath.row])
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

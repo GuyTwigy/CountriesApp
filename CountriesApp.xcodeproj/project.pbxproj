@@ -20,6 +20,8 @@
 		9D8525E32B7511A60035DFE1 /* CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8525E22B7511A60035DFE1 /* CountryData.swift */; };
 		9DDCC6402B753B6400671E72 /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC63F2B753B6400671E72 /* UserDefaultExtension.swift */; };
 		9DDCC6442B753C5C00671E72 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC6432B753C5C00671E72 /* ViewControllerExtension.swift */; };
+		9DDCC64A2B753E4500671E72 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC6482B753E4500671E72 /* CountryCell.swift */; };
+		9DDCC64B2B753E4500671E72 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCC6492B753E4500671E72 /* CountryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		9D8525E22B7511A60035DFE1 /* CountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryData.swift; sourceTree = "<group>"; };
 		9DDCC63F2B753B6400671E72 /* UserDefaultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
 		9DDCC6432B753C5C00671E72 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		9DDCC6482B753E4500671E72 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		9DDCC6492B753E4500671E72 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,14 +76,14 @@
 			children = (
 				9D8525BD2B7509CB0035DFE1 /* AppDelegate.swift */,
 				9D8525BF2B7509CB0035DFE1 /* SceneDelegate.swift */,
+				9D8525C62B7509CC0035DFE1 /* Assets.xcassets */,
+				9D8525C82B7509CC0035DFE1 /* LaunchScreen.storyboard */,
 				9D8525DB2B7510990035DFE1 /* NetworkManager */,
 				9D8525D82B7510490035DFE1 /* NetworkBuilder */,
 				9D8525DE2B7510DA0035DFE1 /* ErrorsHandlers */,
 				9D8525E12B75116F0035DFE1 /* Models */,
 				9DDCC63E2B753B4A00671E72 /* Extensions */,
 				9DDCC6412B753BD100671E72 /* VCs */,
-				9D8525C62B7509CC0035DFE1 /* Assets.xcassets */,
-				9D8525C82B7509CC0035DFE1 /* LaunchScreen.storyboard */,
 				9D8525CB2B7509CC0035DFE1 /* Info.plist */,
 			);
 			path = CountriesApp;
@@ -90,7 +94,8 @@
 			children = (
 				9D8525C12B7509CB0035DFE1 /* CountriesListVC.swift */,
 				9D8525D22B750D960035DFE1 /* CountriesListVC.xib */,
-				9D8525D52B750FF70035DFE1 /* CountriesListVM.swift */,
+				9DDCC6452B753D8800671E72 /* ViewModel */,
+				9DDCC6462B753D9B00671E72 /* Cells */,
 			);
 			path = CountriesListVC;
 			sourceTree = "<group>";
@@ -152,6 +157,23 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		9DDCC6452B753D8800671E72 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9D8525D52B750FF70035DFE1 /* CountriesListVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9DDCC6462B753D9B00671E72 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9DDCC6482B753E4500671E72 /* CountryCell.swift */,
+				9DDCC6492B753E4500671E72 /* CountryCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DDCC64B2B753E4500671E72 /* CountryCell.xib in Resources */,
 				9D8525CA2B7509CC0035DFE1 /* LaunchScreen.storyboard in Resources */,
 				9D8525D42B750D960035DFE1 /* CountriesListVC.xib in Resources */,
 				9D8525C72B7509CC0035DFE1 /* Assets.xcassets in Resources */,
@@ -227,6 +250,7 @@
 				9D8525C22B7509CB0035DFE1 /* CountriesListVC.swift in Sources */,
 				9D8525E32B7511A60035DFE1 /* CountryData.swift in Sources */,
 				9D8525BE2B7509CB0035DFE1 /* AppDelegate.swift in Sources */,
+				9DDCC64A2B753E4500671E72 /* CountryCell.swift in Sources */,
 				9D8525C02B7509CB0035DFE1 /* SceneDelegate.swift in Sources */,
 				9DDCC6402B753B6400671E72 /* UserDefaultExtension.swift in Sources */,
 				9D8525E02B7510EB0035DFE1 /* ErrorsHandlers.swift in Sources */,
