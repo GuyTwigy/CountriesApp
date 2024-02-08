@@ -22,6 +22,10 @@
 		9DDCC6442B753C5C00671E72 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC6432B753C5C00671E72 /* ViewControllerExtension.swift */; };
 		9DDCC64A2B753E4500671E72 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC6482B753E4500671E72 /* CountryCell.swift */; };
 		9DDCC64B2B753E4500671E72 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCC6492B753E4500671E72 /* CountryCell.xib */; };
+		9DDCC64F2B75550500671E72 /* CountryDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC64D2B75550500671E72 /* CountryDetailsVC.swift */; };
+		9DDCC6502B75550500671E72 /* CountryDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DDCC64E2B75550500671E72 /* CountryDetailsVC.xib */; };
+		9DDCC6522B75551200671E72 /* CountryDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC6512B75551200671E72 /* CountryDetailsVM.swift */; };
+		9DDCC6572B75612700671E72 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC6562B75612700671E72 /* CountriesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		9DDCC6432B753C5C00671E72 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		9DDCC6482B753E4500671E72 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		9DDCC6492B753E4500671E72 /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		9DDCC64D2B75550500671E72 /* CountryDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsVC.swift; sourceTree = "<group>"; };
+		9DDCC64E2B75550500671E72 /* CountryDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryDetailsVC.xib; sourceTree = "<group>"; };
+		9DDCC6512B75551200671E72 /* CountryDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsVM.swift; sourceTree = "<group>"; };
+		9DDCC6562B75612700671E72 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,13 +86,14 @@
 				9D8525BF2B7509CB0035DFE1 /* SceneDelegate.swift */,
 				9D8525C62B7509CC0035DFE1 /* Assets.xcassets */,
 				9D8525C82B7509CC0035DFE1 /* LaunchScreen.storyboard */,
+				9D8525CB2B7509CC0035DFE1 /* Info.plist */,
+				9DDCC6552B75610700671E72 /* CountriesManager */,
 				9D8525DB2B7510990035DFE1 /* NetworkManager */,
 				9D8525D82B7510490035DFE1 /* NetworkBuilder */,
 				9D8525DE2B7510DA0035DFE1 /* ErrorsHandlers */,
 				9D8525E12B75116F0035DFE1 /* Models */,
 				9DDCC63E2B753B4A00671E72 /* Extensions */,
 				9DDCC6412B753BD100671E72 /* VCs */,
-				9D8525CB2B7509CC0035DFE1 /* Info.plist */,
 			);
 			path = CountriesApp;
 			sourceTree = "<group>";
@@ -92,8 +101,7 @@
 		9D8525D72B7510310035DFE1 /* CountriesListVC */ = {
 			isa = PBXGroup;
 			children = (
-				9D8525C12B7509CB0035DFE1 /* CountriesListVC.swift */,
-				9D8525D22B750D960035DFE1 /* CountriesListVC.xib */,
+				9DDCC64C2B75548F00671E72 /* VC */,
 				9DDCC6452B753D8800671E72 /* ViewModel */,
 				9DDCC6462B753D9B00671E72 /* Cells */,
 			);
@@ -144,17 +152,19 @@
 		9DDCC6412B753BD100671E72 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				9DDCC6422B753C2500671E72 /* New Group */,
 				9D8525D72B7510310035DFE1 /* CountriesListVC */,
+				9DDCC6422B753C2500671E72 /* CountryDetailsVC */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
 		};
-		9DDCC6422B753C2500671E72 /* New Group */ = {
+		9DDCC6422B753C2500671E72 /* CountryDetailsVC */ = {
 			isa = PBXGroup;
 			children = (
+				9DDCC6532B75551A00671E72 /* VC */,
+				9DDCC6542B75556200671E72 /* ViewModel */,
 			);
-			path = "New Group";
+			path = CountryDetailsVC;
 			sourceTree = "<group>";
 		};
 		9DDCC6452B753D8800671E72 /* ViewModel */ = {
@@ -172,6 +182,40 @@
 				9DDCC6492B753E4500671E72 /* CountryCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		9DDCC64C2B75548F00671E72 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				9D8525C12B7509CB0035DFE1 /* CountriesListVC.swift */,
+				9D8525D22B750D960035DFE1 /* CountriesListVC.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		9DDCC6532B75551A00671E72 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				9DDCC64D2B75550500671E72 /* CountryDetailsVC.swift */,
+				9DDCC64E2B75550500671E72 /* CountryDetailsVC.xib */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		9DDCC6542B75556200671E72 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9DDCC6512B75551200671E72 /* CountryDetailsVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9DDCC6552B75610700671E72 /* CountriesManager */ = {
+			isa = PBXGroup;
+			children = (
+				9DDCC6562B75612700671E72 /* CountriesManager.swift */,
+			);
+			path = CountriesManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +278,7 @@
 			files = (
 				9DDCC64B2B753E4500671E72 /* CountryCell.xib in Resources */,
 				9D8525CA2B7509CC0035DFE1 /* LaunchScreen.storyboard in Resources */,
+				9DDCC6502B75550500671E72 /* CountryDetailsVC.xib in Resources */,
 				9D8525D42B750D960035DFE1 /* CountriesListVC.xib in Resources */,
 				9D8525C72B7509CC0035DFE1 /* Assets.xcassets in Resources */,
 			);
@@ -246,10 +291,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DDCC64F2B75550500671E72 /* CountryDetailsVC.swift in Sources */,
 				9D8525DD2B7510AF0035DFE1 /* NetworkManager.swift in Sources */,
 				9D8525C22B7509CB0035DFE1 /* CountriesListVC.swift in Sources */,
 				9D8525E32B7511A60035DFE1 /* CountryData.swift in Sources */,
+				9DDCC6522B75551200671E72 /* CountryDetailsVM.swift in Sources */,
 				9D8525BE2B7509CB0035DFE1 /* AppDelegate.swift in Sources */,
+				9DDCC6572B75612700671E72 /* CountriesManager.swift in Sources */,
 				9DDCC64A2B753E4500671E72 /* CountryCell.swift in Sources */,
 				9D8525C02B7509CB0035DFE1 /* SceneDelegate.swift in Sources */,
 				9DDCC6402B753B6400671E72 /* UserDefaultExtension.swift in Sources */,
@@ -400,7 +448,6 @@
 				INFOPLIST_FILE = CountriesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,7 +475,6 @@
 				INFOPLIST_FILE = CountriesApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
