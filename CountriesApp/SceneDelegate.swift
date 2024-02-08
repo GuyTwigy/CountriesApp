@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let initialViewController = CountriesListVC(nibName: "CountriesListVC", bundle: nil)
-        window.rootViewController = initialViewController
+        let navigationController = UINavigationController(rootViewController: initialViewController)
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
     }
