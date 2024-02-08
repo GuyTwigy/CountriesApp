@@ -18,6 +18,8 @@
 		9D8525DD2B7510AF0035DFE1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8525DC2B7510AF0035DFE1 /* NetworkManager.swift */; };
 		9D8525E02B7510EB0035DFE1 /* ErrorsHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8525DF2B7510EB0035DFE1 /* ErrorsHandlers.swift */; };
 		9D8525E32B7511A60035DFE1 /* CountryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8525E22B7511A60035DFE1 /* CountryData.swift */; };
+		9DDCC6402B753B6400671E72 /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC63F2B753B6400671E72 /* UserDefaultExtension.swift */; };
+		9DDCC6442B753C5C00671E72 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDCC6432B753C5C00671E72 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9D8525DC2B7510AF0035DFE1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9D8525DF2B7510EB0035DFE1 /* ErrorsHandlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsHandlers.swift; sourceTree = "<group>"; };
 		9D8525E22B7511A60035DFE1 /* CountryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryData.swift; sourceTree = "<group>"; };
+		9DDCC63F2B753B6400671E72 /* UserDefaultExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
+		9DDCC6432B753C5C00671E72 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,8 @@
 				9D8525D82B7510490035DFE1 /* NetworkBuilder */,
 				9D8525DE2B7510DA0035DFE1 /* ErrorsHandlers */,
 				9D8525E12B75116F0035DFE1 /* Models */,
-				9D8525D72B7510310035DFE1 /* CountriesListVC */,
+				9DDCC63E2B753B4A00671E72 /* Extensions */,
+				9DDCC6412B753BD100671E72 /* VCs */,
 				9D8525C62B7509CC0035DFE1 /* Assets.xcassets */,
 				9D8525C82B7509CC0035DFE1 /* LaunchScreen.storyboard */,
 				9D8525CB2B7509CC0035DFE1 /* Info.plist */,
@@ -120,6 +125,31 @@
 				9D8525E22B7511A60035DFE1 /* CountryData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9DDCC63E2B753B4A00671E72 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9DDCC63F2B753B6400671E72 /* UserDefaultExtension.swift */,
+				9DDCC6432B753C5C00671E72 /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9DDCC6412B753BD100671E72 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				9DDCC6422B753C2500671E72 /* New Group */,
+				9D8525D72B7510310035DFE1 /* CountriesListVC */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		9DDCC6422B753C2500671E72 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,8 +228,10 @@
 				9D8525E32B7511A60035DFE1 /* CountryData.swift in Sources */,
 				9D8525BE2B7509CB0035DFE1 /* AppDelegate.swift in Sources */,
 				9D8525C02B7509CB0035DFE1 /* SceneDelegate.swift in Sources */,
+				9DDCC6402B753B6400671E72 /* UserDefaultExtension.swift in Sources */,
 				9D8525E02B7510EB0035DFE1 /* ErrorsHandlers.swift in Sources */,
 				9D8525DA2B7510730035DFE1 /* NetworkBuilder.swift in Sources */,
+				9DDCC6442B753C5C00671E72 /* ViewControllerExtension.swift in Sources */,
 				9D8525D62B750FF70035DFE1 /* CountriesListVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
