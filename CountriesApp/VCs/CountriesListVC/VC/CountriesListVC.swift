@@ -22,11 +22,21 @@ class CountriesListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let saved = UserDefaults.standard.savedCountries {
+            countryList = saved
+        }
+        setupTableView()
         addRefreshControl(to: tblCountries, action: #selector(refreshData))
         hideKeyboardWhenTappedAround(cancelTouches: false)
         vm = CountriesListVM()
         vm?.delegate = self
-        setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let index = countryList.firstIndex(where: { $0.name?.common == CountriesManager.shared.lastDetailed?.name?.common }) {
+            countryList[index].saved = false
+        }
     }
     
     private func setupTableView() {
@@ -63,8 +73,8 @@ extension CountriesListVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = CountryDetailsVC(country: countryList[indexPath.row])
-//        navigationController?.pushViewController(vc, animated: true)
+        let vc = CountryDetailsVC(country: countryList[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
