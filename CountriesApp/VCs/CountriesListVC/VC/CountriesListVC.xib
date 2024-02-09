@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountriesListVC" customModule="CountriesApp" customModuleProvider="target">
             <connections>
+                <outlet property="loader" destination="llc-oT-gtC" id="0jh-gW-U5J"/>
                 <outlet property="searchTextField" destination="mNw-di-vvt" id="BsI-mF-ubj"/>
                 <outlet property="tblCountries" destination="o9b-fB-P1l" id="lXm-BL-hc2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,10 +33,15 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="llc-oT-gtC">
+                    <rect key="frame" x="178" y="420" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="llc-oT-gtC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0JQ-tR-gO5"/>
+                <constraint firstItem="llc-oT-gtC" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="4rj-Je-3fM"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="o9b-fB-P1l" secondAttribute="bottom" id="IeO-re-fLh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mNw-di-vvt" secondAttribute="trailing" constant="20" id="K0v-8P-XTq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o9b-fB-P1l" secondAttribute="trailing" id="KBx-ns-MG8"/>

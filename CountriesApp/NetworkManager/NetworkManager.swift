@@ -44,7 +44,7 @@ class NetworkManager {
                         case let apiError as ErrorsHandlers:
                             promise(.failure(apiError))
                         default:
-                            promise(.failure(ErrorsHandlers.requestError(.other("Fail to fetch Data" as! Error))))
+                            promise(.failure(ErrorsHandlers.serverError(.noInternetConnection)))
                         }
                     }
                 }, receiveValue: {

@@ -13,6 +13,11 @@ class CountriesListVC: UIViewController {
     var countryList: [CountryData] = []
     var notFilteredCountryList: [CountryData] = []
     
+    @IBOutlet weak var loader: UIActivityIndicatorView! {
+        didSet {
+            loader.startAnimating()
+        }
+    }
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
             searchTextField.delegate = self
@@ -57,6 +62,7 @@ class CountriesListVC: UIViewController {
     }
     
     @objc private func refreshData() {
+        searchTextField.text = ""
         vm?.fetchCountries()
     }
 }
@@ -90,7 +96,12 @@ extension CountriesListVC: CountriesVMDelegate {
             }
             
             if let error {
-                self.showAlert(title: "Something went wrong, please try again", message: error.localizedDescription)
+                self.showAlert(title: "Something went wrong, please try again", message: "\(error)")
+                if let saved = UserDefaults.standard.savedCountries {
+                    self.countryList = saved
+                }
+                self.tblCountries.reloadData()
+                self.endRefreshing(scrollView: self.tblCountries)
             } else if let countries {
                 self.countryList.removeAll()
                 self.notFilteredCountryList.removeAll()
@@ -99,6 +110,7 @@ extension CountriesListVC: CountriesVMDelegate {
                 self.tblCountries.reloadData()
                 self.endRefreshing(scrollView: self.tblCountries)
             }
+            self.loader.stopAnimating()
         }
     }
 }

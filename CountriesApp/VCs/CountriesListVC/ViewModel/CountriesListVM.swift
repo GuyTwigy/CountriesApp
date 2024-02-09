@@ -36,16 +36,17 @@ class CountriesListVM {
             NetworkManager.shared.genericGetCall(url: urlRequest, type: [CountryData].self)
                 .sink { [weak self]  completion in
                     guard let self else {
-                        self?.delegate?.countriesFetched(countries: [], error: ErrorsHandlers.requestError(.invalidRequest(urlRequest)))
+                        self?.delegate?.countriesFetched(countries: self?.countryList, error: ErrorsHandlers.requestError(.invalidRequest(urlRequest)))
                         return
                     }
                     
                     if case .failure(let error) = completion {
                         print(ErrorsHandlers.requestError(.other(error)))
-                        self.delegate?.countriesFetched(countries: [], error: ErrorsHandlers.requestError(.other(error)))
+                        self.delegate?.countriesFetched(countries: self.countryList, error: ErrorsHandlers.requestError(.other(error)))
                     }
                 } receiveValue: { [weak self] countryList in
                     guard let self else {
+                        self?.delegate?.countriesFetched(countries: self?.countryList, error: ErrorsHandlers.serverError(.noInternetConnection))
                         return
                     }
                     
@@ -57,6 +58,8 @@ class CountriesListVM {
                     self.delegate?.countriesFetched(countries: self.countryList, error: nil)
                 }
                 .store(in: &cancellables)
+        } else {
+            delegate?.countriesFetched(countries: countryList, error: ErrorsHandlers.serverError(.noInternetConnection))
         }
     }
 }
